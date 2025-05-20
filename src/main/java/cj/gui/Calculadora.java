@@ -3,6 +3,7 @@ package cj.gui;
 import cj.calculo.Grafica3D;
 import cj.calculo.IntegralDobre;
 
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import javax.swing.*;
 
@@ -37,7 +38,7 @@ public class Calculadora extends JFrame{
             IntegralDobre calculo= new IntegralDobre();
             double resultado= calculo.calcularIntegral(formula,a,b,c,d,tipo);
             lblResultado.setText(String.format("Resultado: %.6f",resultado));
-            Grafica3D.crearPanelGrafico(formula,xmin,xmax,ymin,ymax);
+            if (tipo.equals("volumen")) Grafica3D.crearPanelGrafico(formula,xmax,xmin,ymax,ymin);
 
         });
     }
@@ -46,7 +47,6 @@ public class Calculadora extends JFrame{
         setContentPane(panel1);
         setTitle("Calculadora");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
         setResizable(true);
         setSize(600, 600);
         setVisible(true);
@@ -61,7 +61,7 @@ public class Calculadora extends JFrame{
     }
 
     public static void main(String[] args) {
-        FlatMacLightLaf.setup();
+        FlatMacDarkLaf.setup();
         Calculadora calculadora = new Calculadora();
     }
 }
