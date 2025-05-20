@@ -10,7 +10,7 @@ public class IntegralDobre {
 
     public double calcularIntegral(String funcionEst, double a, double b, double c, double d, String tipoCalculo) {
 
-        License.iConfirmNonCommercialUse("Estudiante de ingenieria de software- proyecto de software");
+        License.iConfirmNonCommercialUse("Estudiante de ingenieria de software - proyecto de software");
 
         // Si el tipo de cálculo es "área", entonces f(x,y) = 1
         if (tipoCalculo.equalsIgnoreCase("area")) {
