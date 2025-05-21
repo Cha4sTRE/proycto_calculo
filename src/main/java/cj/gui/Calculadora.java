@@ -2,12 +2,11 @@ package cj.gui;
 
 import cj.calculo.Grafica3D;
 import cj.calculo.IntegralDobre;
-
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Collection;
 
 
 public class Calculadora extends JFrame{
@@ -147,14 +146,11 @@ public class Calculadora extends JFrame{
         setResizable(true);
         setSize(600, 600);
         setVisible(true);
-        JSpinner campoA=new JSpinner(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
-        limSupx.add(campoA);
-        JSpinner campoB=new JSpinner(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
-        limInfX.add(campoB);
-        JSpinner campoC =new JSpinner(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
-        limInfY.add(campoC);
-        JSpinner campoD=new JSpinner(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
-        limSupY.add(campoD);
+        setLocationRelativeTo(null);
+        limSupx.setModel(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
+        limInfX.setModel(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
+        limSupY.setModel(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
+        limInfY.setModel(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
         ImageIcon icon= new ImageIcon("src/main/resources/ayuda.png");
         Image scale= icon.getImage().getScaledInstance(btnAyuda.getWidth(), btnAyuda.getHeight(), Image.SCALE_SMOOTH);
         btnAyuda.setIcon(new ImageIcon(scale));
@@ -162,6 +158,6 @@ public class Calculadora extends JFrame{
 
     public static void main(String[] args) {
         FlatMacDarkLaf.setup();
-        Calculadora calculadora = new Calculadora();
+        new Calculadora();
     }
 }
