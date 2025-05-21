@@ -86,10 +86,10 @@ public class Calculadora extends JFrame{
                             "Ayuda de Sintaxis Matematica\n" +
                                     "\n" +
                                     "" +
-                                    "- '+' Suma\n" +
-                                    "- '-' Resta\n" +
-                                    "- '*' Multiplicacion\n" +
-                                    "- '/' Division'\n\n"
+                                    "  '+'  Suma\n" +
+                                    "  '-'  Resta\n" +
+                                    "  '*'  Multiplicacion\n" +
+                                    "  '/'  Division'\n\n"
                     ),
                     "Cuadro de Ayuda",
                     JOptionPane.DEFAULT_OPTION,
@@ -100,15 +100,14 @@ public class Calculadora extends JFrame{
                 case 0:
                     JOptionPane.showOptionDialog(
                             this,
-                            "-sqrt(x):\tRaíz cuadrada\n" +
-                                    "- abs(x):  Valor absoluto\n" +
-                                    "- exp(x):  Exponencial (e^x)\n" +
-                                    "- ln(x):  Logaritmo natural\n" +
-                                    "- log(x):  Logaritmo en base 10\n" +
-                                    "- round(x):  Redondea al entero más cercano\n" +
-                                    "- floor(x):  Redondea hacia abajo\n" +
-                                    "- ceil(x):  Redondea hacia arriba\n" +
-                                    "- sign(x):  Devuelve -1, 0 o 1 dependiendo del signo\n\n" +
+                            " sqrt(x):   Raíz cuadrada\n" +
+                                    "  abs(x):   Valor absoluto\n" +
+                                    "  exp(x):   Exponencial (e^x)\n" +
+                                    "  ln(x):   Logaritmo natural\n" +
+                                    "  log(x):   Logaritmo en base 10\n" +
+                                    "  round(x):   Redondea al entero más cercano\n" +
+                                    "  floor(x):   Redondea hacia abajo\n" +
+                                    "  ceil(x):   Redondea hacia arriba\n\n" +
                                     "Ejemplo:  x^2 + y^2"
                             ,
                             "Simbolos Algebraicos",
@@ -119,12 +118,12 @@ public class Calculadora extends JFrame{
                 case 1:
                     JOptionPane.showOptionDialog(
                             this,
-                            "- sen(x):  Seno\n" +
-                                    "- cos(x):  Coseno\n" +
-                                    "- tan(x):  Tangente\n" +
-                                    "- asin(x):  Arcoseno\n" +
-                                    "- acos(x):  Arcocoseno\n" +
-                                    "atan(x):  Arcotangente\n\n" +
+                            "  sen(x):  Seno\n" +
+                                    "  cos(x):  Coseno\n" +
+                                    "  tan(x):  Tangente\n" +
+                                    "  asin(x):  Arcoseno\n" +
+                                    "  acos(x):  Arcocoseno\n" +
+                                    "  atan(x):  Arcotangente\n\n" +
                                     "Ejemplo:  sin(x) * cos(y)"
                             ,
                             "Simbolos Trigonometricas",
