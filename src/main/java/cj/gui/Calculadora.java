@@ -27,6 +27,16 @@ public class Calculadora extends JFrame{
 
     public Calculadora() {
         initComponents();
+        setContentPane(panel1);
+        setTitle("Calculadora");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(true);
+        setSize(600, 600);
+        setVisible(true);
+        setLocationRelativeTo(null);
+        ImageIcon icon= new ImageIcon(getClass().getResource("/img/ayuda.png"));
+        Image scale= icon.getImage().getScaledInstance(btnAyuda.getWidth(), btnAyuda.getHeight(), Image.SCALE_SMOOTH);
+        btnAyuda.setIcon(new ImageIcon(scale));
         btnEjem1.addActionListener((e)->{
             txtFormula.setText("x^2-y^2");
             Integer limiteP=1;
@@ -139,20 +149,12 @@ public class Calculadora extends JFrame{
     }
 
     private void initComponents() {
-        setContentPane(panel1);
-        setTitle("Calculadora");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(true);
-        setSize(600, 600);
-        setVisible(true);
-        setLocationRelativeTo(null);
+
         limSupx.setModel(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
         limInfX.setModel(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
         limSupY.setModel(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
         limInfY.setModel(new SpinnerNumberModel(0.0, -100.0, 100.0, 0.1));
-        ImageIcon icon= new ImageIcon("src/main/resources/ayuda.png");
-        Image scale= icon.getImage().getScaledInstance(btnAyuda.getWidth(), btnAyuda.getHeight(), Image.SCALE_SMOOTH);
-        btnAyuda.setIcon(new ImageIcon(scale));
+
     }
 
     public static void main(String[] args) {
