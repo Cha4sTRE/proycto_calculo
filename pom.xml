@@ -44,12 +44,41 @@
         </dependency>
         <dependency>
             <groupId>org.jzy3d</groupId>
-            <artifactId>jzy3d-native-jogl-awt</artifactId>
-            <version>2.1.0</version>
+            <artifactId>jzy3d-native-jogl-core</artifactId>
+            <version>2.1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jogamp.jogl</groupId>
+            <artifactId>jogl-all</artifactId>
+            <version>v2.4.0-rc4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jogamp.gluegen</groupId>
+            <artifactId>gluegen-rt</artifactId>
+            <version>v2.4.0-rc4</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>copy-natives</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>copy-dependencies</goal>
+                    </goals>
+                    <configuration>
+                        <includeScope>runtime</includeScope>
+                        <outputDirectory>${project.build.directory}/natives</outputDirectory>
+                        <includeTypes>dll</includeTypes>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.4.2</version>
